@@ -3,7 +3,7 @@
  * ============================================================
  * ISI NOMOR WHATSAPP DI BARIS DI BAWAH INI.
  * Contoh:
- *   const WHATSAPP_URL = 'https://wa.me/6281234567890?text=Halo%20Digitechboss%2C%20saya%20mau%20tanya';
+ *   const WHATSAPP_URL = 'https://wa.me/62xxxxxxxxxx?text=Halo%20Digitechboss';
  *
  * Biarkan kosong ('') jika belum punya nomor. Semua tombol akan
  * menampilkan notifikasi "belum diisi" instead of membuka link.
