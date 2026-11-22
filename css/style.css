@@ -122,20 +122,65 @@ a{text-decoration:none;color:inherit}
 .step h3{color:#fff;font-size:16px;letter-spacing:1px;margin:10px 0}
 .step p{font-size:12px;line-height:1.7;color:#a7c8b6}
 
-/* JENIS WEBSITE */
-.jenis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.jcard{background:#fff;border:1px solid #dfe8e1;border-radius:13px;padding:20px;position:relative;transition:.25s}
-.jcard:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,61,44,.10)}
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;
+ background:linear-gradient(90deg,#12b76a,#6ee7a8);transition:width .1s linear}
+
+/* FLOATING WHATSAPP */
+.float-wa{position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:70;
+ width:54px;height:54px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;
+ box-shadow:0 10px 30px rgba(0,0,0,.30);transition:transform .25s}
+.float-wa:hover{transform:translateY(-50%) scale(1.10)}
+.wa-ico{font-size:23px;position:relative;z-index:2}
+.wa-ring{position:absolute;inset:-6px;border:2px solid rgba(37,211,102,.6);border-radius:50%;animation:wapulse 2.2s infinite}
+@keyframes wapulse{0%{transform:scale(.9);opacity:.85}100%{transform:scale(1.5);opacity:0}}
+.wa-tip{position:absolute;left:66px;white-space:nowrap;background:#06271d;color:#fff;border-radius:8px;
+ padding:8px 12px;font-size:10px;line-height:1.35;opacity:0;pointer-events:none;
+ transform:translateX(-8px);transition:.25s}
+.wa-tip small{color:#6ee7a8;font-size:8px}
+.float-wa:hover .wa-tip{opacity:1;transform:translateX(0)}
+
+/* JENIS WEBSITE — CAROUSEL */
+.jenis-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.carousel-ctrl{display:flex;align-items:center;gap:9px;flex-shrink:0;padding-bottom:4px}
+.cpos{font-size:10px;color:#64748b;letter-spacing:1px}
+.cpos b{color:#0b3d2c;font-size:15px}
+.carousel-ctrl button{width:38px;height:38px;border-radius:50%;border:1px solid #cfddd3;
+ background:#fff;color:#0b3d2c;font-size:16px;cursor:pointer;transition:.2s}
+.carousel-ctrl button:hover{background:#0b3d2c;color:#fff;border-color:#0b3d2c}
+.carousel-ctrl button:active{transform:scale(.92)}
+.carousel{overflow:hidden;padding:6px 2px 12px}
+.carousel-track{display:flex;gap:16px;transition:transform .65s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.jcard{flex:0 0 calc(25% - 12px);background:#fff;border:1px solid #dfe8e1;border-radius:13px;
+ padding:14px;position:relative;transition:transform .3s,box-shadow .3s}
+.jcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,61,44,.13)}
 .jcard.hi{border:2px solid #12b76a;background:linear-gradient(160deg,#fff,#eefbf3)}
-.jbadge{position:absolute;top:-9px;left:18px;background:#12b76a;color:#06271d;font-size:7.5px;font-weight:900;letter-spacing:.7px;padding:4px 10px;border-radius:99px}
-.jn{position:absolute;top:16px;right:18px;font-size:10px;font-weight:900;color:#cbd5d0}
-.ji{width:42px;height:42px;border-radius:11px;background:#eafaf1;display:grid;place-items:center;font-size:20px;margin-bottom:14px}
-.jcard h3{font-size:15px;margin-bottom:6px;color:#0b3d2c}
-.jcard p{font-size:11.3px;line-height:1.6;color:#5b6f63;min-height:54px}
-.jcard a{display:inline-block;margin-top:12px;font-size:10px;font-weight:800;color:#12b76a}
+.jbadge{position:absolute;top:-9px;left:14px;background:#12b76a;color:#06271d;font-size:7.5px;
+ font-weight:900;letter-spacing:.7px;padding:4px 10px;border-radius:99px;z-index:2}
+.jimg{height:125px;border-radius:9px;overflow:hidden;margin-bottom:12px;background:#e8f0ea}
+.jimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.jcard:hover .jimg img{transform:scale(1.08)}
+.jcard h3{font-size:14px;margin-bottom:5px;color:#0b3d2c}
+.jcard p{font-size:10.5px;line-height:1.55;color:#5b6f63;min-height:50px}
+.jcard a{display:inline-block;margin-top:10px;font-size:10px;font-weight:800;color:#12b76a}
 .jcard a:hover{text-decoration:underline}
+.carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:16px}
+.carousel-dots button{width:7px;height:7px;border-radius:99px;border:0;background:#cbd8ce;padding:0;cursor:pointer;transition:.25s}
+.carousel-dots button.on{width:22px;background:#12b76a}
 .jenis-foot{margin-top:20px;text-align:center;font-size:11px;color:#64748b}
 .jenis-foot a{color:#0b3d2c;font-weight:800}
+
+/* REVEAL & MOTION */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.hero-title .line{animation:rise .9s both}
+.hero-title .line:nth-child(2){animation-delay:.14s}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.btn-main,.btn-huge{background-image:linear-gradient(90deg,#12b76a,#6ee7a8,#12b76a);
+ background-size:200% 100%;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:200% 0}}
+.machine{animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-53%)}}
 
 /* demo */
 .demo-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}
@@ -203,10 +248,15 @@ a{text-decoration:none;color:inherit}
 @media(max-width:900px){
  .nav-links{display:none}
  .side-note{display:none}
+ .jenis-head{flex-direction:column;align-items:flex-start}
+ .jcard{flex:0 0 calc(50% - 8px)}
+ .float-wa{left:12px;width:48px;height:48px}
+ .wa-tip{display:none}
  .hero-chips{top:138px;gap:6px}
  .hero-chips span{font-size:7.5px;padding:6px 9px}
  .live-card{left:auto;right:2%;bottom:auto;top:30%;padding:8px 11px}
  .jenis-grid{grid-template-columns:1fr 1fr}
+ .jcard{flex:0 0 calc(50% - 8px)}
  .jcard p{min-height:0}
  .machine{left:70%;width:76vw;opacity:.5}
  .hero-title{letter-spacing:-2px}
@@ -220,7 +270,8 @@ a{text-decoration:none;color:inherit}
  .hero-chips{top:112px;max-width:90vw}
  .hero-chips span:nth-child(3){display:none}
  .live-card{display:none}
- .jenis-grid{grid-template-columns:1fr}.pill{padding:8px 13px;font-size:10px}
+ .jenis-grid{grid-template-columns:1fr}
+ .jcard{flex:0 0 100%}.pill{padding:8px 13px;font-size:10px}
  .hero{padding-bottom:30px}.hero-tag{top:92px;font-size:8px}
  .hero-title{font-size:clamp(42px,13vw,70px);letter-spacing:-2px;margin-bottom:24px}
  .machine{left:74%;top:38%;width:88vw;opacity:.38}
