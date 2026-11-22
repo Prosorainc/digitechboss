@@ -88,7 +88,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       index = Math.max(0, Math.min(i, maxIndex()));
       var w = items[0].getBoundingClientRect().width;
       var gap = parseFloat(getComputedStyle(track).gap) || 0;
-      var step = opt.mode === 'grid' ? per * (w + gap) : (w + gap);
+      var step = opt.mode === 'grid' ? (per / 2) * (w + gap) : (w + gap);
       track.style.transform = 'translateX(-' + (index * step) + 'px)';
       Array.prototype.forEach.call(dots.children, function (d, n) { d.classList.toggle('on', n === index); });
     }
