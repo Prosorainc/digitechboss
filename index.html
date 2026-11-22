@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<a href="#" class="float-wa" data-wa aria-label="Chat WhatsApp">
+  <span class="wa-ring"></span><span class="wa-ico">💬</span>
+  <span class="wa-tip">Chat kami<br><small>Digitechboss</small></span>
+</a>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
@@ -105,24 +111,36 @@
 
 <!-- ============ JENIS WEBSITE ============ -->
 <section class="section cream" id="jenis">
-  <div class="sec-head">
-    <span class="kicker">02 / PEMBUATAN WEBSITE</span>
-    <h2>Tinggal pilih jenis website kamu.</h2>
-    <p>Semua dibuat custom mengikuti usaha kamu — bukan template yang sama untuk semua. Pilih kategori, lalu chat kami untuk mulai.</p>
+  <div class="sec-head jenis-head">
+    <div>
+      <span class="kicker">02 / PEMBUATAN WEBSITE</span>
+      <h2>Tinggal pilih jenis website kamu.</h2>
+      <p>10 kategori, semua dibuat custom. Geser untuk lihat semuanya — lalu chat kami untuk mulai.</p>
+    </div>
+    <div class="carousel-ctrl">
+      <span class="cpos"><b id="carPos">01</b> / 10</span>
+      <button id="carPrev" aria-label="Sebelumnya">←</button>
+      <button id="carNext" aria-label="Berikutnya">→</button>
+    </div>
   </div>
-  <div class="jenis-grid">
-    <article class="jcard hi"><span class="jbadge">TERCEPAT</span><span class="jn">01</span><div class="ji">⚡</div><h3>Landing Page Jualan</h3><p>Satu halaman yang langsung menerima pesanan via WhatsApp. Paling cepat jadi.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">02</span><div class="ji">💼</div><h3>Website Perusahaan</h3><p>Company profile yang membuat usaha kamu terlihat kredibel di mata klien besar.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">03</span><div class="ji">🛍️</div><h3>Online Shop</h3><p>Katalog produk + tombol pesan. Marketplace tetap jadi, website jadi bukti profesional.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">04</span><div class="ji">🍽️</div><h3>Kuliner &amp; Katering</h3><p>Menu, harga, dan stok harian bisa diubah dari HP. Cocok dipasangkan dengan bot.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">05</span><div class="ji">🏠</div><h3>Website Properti</h3><p>Developer, apartemen, atau agen — katalog unit dengan CTA langsung ke WhatsApp.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">06</span><div class="ji">🚗</div><h3>Otomotif</h3><p>Dealer, showroom, rental, bengkel, spare part, hingga car wash.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">07</span><div class="ji">🎓</div><h3>Edukasi &amp; Kursus</h3><p>Sekolah, kursus online, tutor — info kelas dan pendaftaran dalam satu tempat.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">08</span><div class="ji">📸</div><h3>Portfolio Pribadi</h3><p>Fotografer, desainer, konsultan, atau public figure yang ingin nilai diri naik.</p><a href="#" data-wa>Konsultasi ↗</a></article>
-    <article class="jcard"><span class="jn">09</span><div class="ji">✈️</div><h3>Travel &amp; Wisata</h3><p>Paket perjalanan, villa, destinasi — mudah dijangkau sampai ke luar negeri.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+  <div class="carousel" id="carWrap">
+    <div class="carousel-track" id="carTrack">
+      <article class="jcard hi"><span class="jbadge">TERCEPAT</span><div class="jimg"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=75" alt="Landing page jualan" loading="lazy"></div><h3>Landing Page Jualan</h3><p>Satu halaman yang langsung menerima pesanan via WhatsApp.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=75" alt="Website perusahaan" loading="lazy"></div><h3>Website Perusahaan</h3><p>Company profile yang membuat usaha terlihat kredibel di mata klien besar.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=75" alt="Online shop" loading="lazy"></div><h3>Online Shop</h3><p>Katalog produk + tombol pesan. Marketplace tetap jadi, website jadi bukti profesional.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=75" alt="Kuliner katering" loading="lazy"></div><h3>Kuliner &amp; Katering</h3><p>Menu, harga, dan stok harian bisa diubah dari HP. Cocok dipasangkan dengan bot.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" alt="Website properti" loading="lazy"></div><h3>Website Properti</h3><p>Developer, apartemen, atau agen — katalog unit dengan CTA langsung ke WhatsApp.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=75" alt="Website otomotif" loading="lazy"></div><h3>Otomotif</h3><p>Dealer, showroom, rental, bengkel, spare part, hingga car wash.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=75" alt="Edukasi kursus" loading="lazy"></div><h3>Edukasi &amp; Kursus</h3><p>Sekolah, kursus online, tutor — info kelas dan pendaftaran dalam satu tempat.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&q=75" alt="Portfolio pribadi" loading="lazy"></div><h3>Portfolio Pribadi</h3><p>Fotografer, desainer, konsultan, atau public figure yang ingin nilai naik.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=75" alt="Travel wisata" loading="lazy"></div><h3>Travel &amp; Wisata</h3><p>Paket perjalanan, villa, destinasi — mudah dijangkau sampai ke luar negeri.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+      <article class="jcard"><div class="jimg"><img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&q=75" alt="News blog" loading="lazy"></div><h3>News &amp; Blog</h3><p>Media online, majalah, atau blog pribadi dengan tampilan rapi dan cepat.</p><a href="#" data-wa>Konsultasi ↗</a></article>
+    </div>
   </div>
+  <div class="carousel-dots" id="carDots" aria-label="Navigasi kategori"></div>
   <div class="jenis-foot">Jenis lain belum ada di daftar? <a href="#" data-wa>Chat saja, kami bantu tentukan ↗</a></div>
 </section>
+
 <!-- ============ MESIN ============ -->
 <section class="section dark" id="mesin">
   <div class="sec-head light">
