@@ -36,7 +36,7 @@ a{text-decoration:none;color:inherit}
 .brand.small img{width:24px;height:24px}
 .nav-links{display:flex;gap:34px;font-size:11px;letter-spacing:.4px;opacity:.9}
 .nav-links a:hover{color:var(--lime)}
-.pill{border:1px solid rgba(255,255,255,.55);border-radius:99px;padding:10px 18px;font-size:11px;font-weight:700;
+.pill{border:1px solid rgba(255,255,255,.55);border-radius:99px;padding:13px 24px;font-size:12.5px;font-weight:800;
  transition:.25s;white-space:nowrap}
 .pill:hover{background:#fff;color:var(--green)}
 
@@ -140,35 +140,44 @@ a{text-decoration:none;color:inherit}
 .wa-tip small{color:#6ee7a8;font-size:8px}
 .float-wa:hover .wa-tip{opacity:1;transform:translateX(0)}
 
-/* JENIS WEBSITE — CAROUSEL */
+/* JENIS WEBSITE — 2 BARIS CAROUSEL */
 .jenis-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
-.carousel-ctrl{display:flex;align-items:center;gap:9px;flex-shrink:0;padding-bottom:4px}
-.cpos{font-size:10px;color:#64748b;letter-spacing:1px}
-.cpos b{color:#0b3d2c;font-size:15px}
-.carousel-ctrl button{width:38px;height:38px;border-radius:50%;border:1px solid #cfddd3;
- background:#fff;color:#0b3d2c;font-size:16px;cursor:pointer;transition:.2s}
-.carousel-ctrl button:hover{background:#0b3d2c;color:#fff;border-color:#0b3d2c}
-.carousel-ctrl button:active{transform:scale(.92)}
-.carousel{overflow:hidden;padding:6px 2px 12px}
-.carousel-track{display:flex;gap:16px;transition:transform .65s cubic-bezier(.22,.61,.36,1);will-change:transform}
-.jcard{flex:0 0 calc(25% - 12px);background:#fff;border:1px solid #dfe8e1;border-radius:13px;
- padding:14px;position:relative;transition:transform .3s,box-shadow .3s}
-.jcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,61,44,.13)}
+.carousel-wrap,.demo-carousel{position:relative}
+.carousel{overflow:hidden;padding:4px 0 10px}
+.carousel-track{width:100%;display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);
+ grid-auto-columns:calc(25% - 12px);gap:14px;transition:transform .7s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.car-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:56px;height:56px;border-radius:50%;
+ border:3px solid #fff;background:#0b3d2c;color:#fff;font-size:24px;font-weight:700;cursor:pointer;
+ box-shadow:0 10px 28px rgba(11,61,44,.30);transition:transform .25s,background .25s,color .25s}
+.car-arrow:hover{background:#12b76a;color:#06271d;transform:translateY(-50%) scale(1.09)}
+.car-arrow:active{transform:translateY(-50%) scale(.95)}
+.car-arrow.left{left:-16px}
+.car-arrow.right{right:-16px}
+.jcard{background:#fff;border:1px solid #dfe8e1;border-radius:13px;padding:13px;position:relative;transition:transform .3s,box-shadow .3s}
+.jcard:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(11,61,44,.13)}
 .jcard.hi{border:2px solid #12b76a;background:linear-gradient(160deg,#fff,#eefbf3)}
 .jbadge{position:absolute;top:-9px;left:14px;background:#12b76a;color:#06271d;font-size:7.5px;
  font-weight:900;letter-spacing:.7px;padding:4px 10px;border-radius:99px;z-index:2}
-.jimg{height:125px;border-radius:9px;overflow:hidden;margin-bottom:12px;background:#e8f0ea}
+.jimg{height:112px;border-radius:9px;overflow:hidden;margin-bottom:11px;background:#e8f0ea}
 .jimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
 .jcard:hover .jimg img{transform:scale(1.08)}
-.jcard h3{font-size:14px;margin-bottom:5px;color:#0b3d2c}
-.jcard p{font-size:10.5px;line-height:1.55;color:#5b6f63;min-height:50px}
-.jcard a{display:inline-block;margin-top:10px;font-size:10px;font-weight:800;color:#12b76a}
+.jcard h3{font-size:13.5px;margin-bottom:4px;color:#0b3d2c}
+.jcard p{font-size:10.3px;line-height:1.5;color:#5b6f63;min-height:46px}
+.jcard a{display:inline-block;margin-top:8px;font-size:10px;font-weight:800;color:#12b76a}
 .jcard a:hover{text-decoration:underline}
-.carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:16px}
+.carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:18px}
 .carousel-dots button{width:7px;height:7px;border-radius:99px;border:0;background:#cbd8ce;padding:0;cursor:pointer;transition:.25s}
 .carousel-dots button.on{width:22px;background:#12b76a}
-.jenis-foot{margin-top:20px;text-align:center;font-size:11px;color:#64748b}
+.jenis-foot{margin-top:18px;text-align:center;font-size:11px;color:#64748b}
 .jenis-foot a{color:#0b3d2c;font-weight:800}
+
+/* CONTOH — CAROUSEL 3 SLIDE */
+.demo-viewport{overflow:hidden;border-radius:14px}
+.demo-track{display:flex;transition:transform .85s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.demo-slide{flex:0 0 100%;min-width:100%}
+.demo-carousel .car-arrow{width:60px;height:60px;font-size:26px}
+.demo-carousel .car-arrow.left{left:-22px}
+.demo-carousel .car-arrow.right{right:-22px}
 
 /* REVEAL & MOTION */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
@@ -249,14 +258,16 @@ a{text-decoration:none;color:inherit}
  .nav-links{display:none}
  .side-note{display:none}
  .jenis-head{flex-direction:column;align-items:flex-start}
- .jcard{flex:0 0 calc(50% - 8px)}
+ .carousel-track{grid-auto-columns:calc(50% - 7px)}
+ .car-arrow{width:50px;height:50px;font-size:21px}
  .float-wa{left:12px;width:48px;height:48px}
  .wa-tip{display:none}
  .hero-chips{top:138px;gap:6px}
  .hero-chips span{font-size:7.5px;padding:6px 9px}
  .live-card{left:auto;right:2%;bottom:auto;top:30%;padding:8px 11px}
  .jenis-grid{grid-template-columns:1fr 1fr}
- .jcard{flex:0 0 calc(50% - 8px)}
+ .carousel-track{grid-auto-columns:calc(50% - 7px)}
+ .car-arrow{width:50px;height:50px;font-size:21px}
  .jcard p{min-height:0}
  .machine{left:70%;width:76vw;opacity:.5}
  .hero-title{letter-spacing:-2px}
@@ -271,7 +282,9 @@ a{text-decoration:none;color:inherit}
  .hero-chips span:nth-child(3){display:none}
  .live-card{display:none}
  .jenis-grid{grid-template-columns:1fr}
- .jcard{flex:0 0 100%}.pill{padding:8px 13px;font-size:10px}
+ .carousel-track{grid-auto-columns:100%}
+ .car-arrow{width:46px;height:46px;font-size:19px}
+ .demo-carousel .car-arrow{width:48px;height:48px;font-size:20px}.pill{padding:8px 13px;font-size:10px}
  .hero{padding-bottom:30px}.hero-tag{top:92px;font-size:8px}
  .hero-title{font-size:clamp(42px,13vw,70px);letter-spacing:-2px;margin-bottom:24px}
  .machine{left:74%;top:38%;width:88vw;opacity:.38}
